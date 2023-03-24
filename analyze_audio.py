@@ -45,6 +45,7 @@ if __name__ == "__main__":
         for category in moderation.categories:
             category_score = float(moderation.category_scores[category])
             if float(category_score) >= math.pow(10, -3):
+                category_score = '{0}%'.format((float(moderation.category_scores[category]) * 100))
                 print(f'Category: {category} Score: {category_score}')
         print(f'Flagged: {moderation.flagged}')
     else:
